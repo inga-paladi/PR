@@ -1,0 +1,40 @@
+version: '3.1'
+
+volumes:
+  db_data1: {}
+  db_data2: {}
+  db_data3: {}
+
+services:
+  db1:
+    image: postgres:15.4-bookworm
+    restart: always
+    environment:
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_passwd
+    volumes:
+      - ./secrets/postgres_passwd:/run/secrets/postgres_passwd:ro
+      - db_data1:/var/lib/postgresql
+    ports:
+      - 5401:5432
+  
+  db2:
+    image: postgres:15.4-bookworm
+    restart: always
+    environment:
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_passwd
+    volumes:
+      - ./secrets/postgres_passwd:/run/secrets/postgres_passwd:ro
+      - db_data2:/var/lib/postgresql
+    ports:
+      - 5402:5432
+
+  db3:
+    image: postgres:15.4-bookworm
+    restart: always
+    environment:
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_passwd
+    volumes:
+      - ./secrets/postgres_passwd:/run/secrets/postgres_passwd:ro
+      - db_data3:/var/lib/postgresql
+    ports:
+      - 5403:5432
