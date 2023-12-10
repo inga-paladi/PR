@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab9</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>WELCOME</h1>
+
+    {% if email_status == 'success' %}
+        <p class="email-success">Email sent successfully</p>
+    {% elif email_status == 'failure' %}
+        <p class="email-failure">Failed to send email. Please try again.</p>
+    {% endif %}
+
+    <form action="/api/email" method="post">
+        <label for="recipientEmail">Recipient's Email:</label>
+        <input type="email" id="recipientEmail" name="recipientEmail" required>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <label for="attachment">Attach a File:</label>
+        <input type="file" id="attachment" name="attachment">
+
+        <input type="submit" value="Send Email">
+    </form>
+
+</body>
+</html>
