@@ -1,0 +1,70 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url(1.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333333;
+}
+
+input[type="email"],
+input[type="text"],
+textarea,
+input[type="file"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #cccccc;
+    border-radius: 8px; 
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #5981ee;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px; 
+}
+
+input[type="submit"]:hover {
+    background-color: #4569c5;
+}
+
+.email-success,
+.email-failure {
+    background-color: #ffffff;
+    border: 2px solid #cccccc;
+    color: #333333;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 15px;
+    text-align: center;
+}
